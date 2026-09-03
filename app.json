@@ -1,6 +1,7 @@
 {
   "expo": {
     "name": "ntpasswordgenerator",
+    "scheme": "ntpasswordgenerator",
     "slug": "ntpasswordgenerator",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,6 +18,13 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "predictiveBackGestureEnabled": false
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar"
+    ],
+    "experiments": {
+      "typedRoutes": true
     }
   }
 }
