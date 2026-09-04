@@ -20,7 +20,17 @@
       "predictiveBackGestureEnabled": false
     },
     "plugins": [
+      "expo-localization",
       "expo-router",
+      "expo-secure-store",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#9147FF",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 250
+        }
+      ],
       "expo-status-bar"
     ],
     "experiments": {
