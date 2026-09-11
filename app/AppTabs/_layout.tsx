@@ -4,6 +4,7 @@ import { BottomTabNavigationOptions } from "expo-router/js-tabs";
 
 import TabBar from "../../components/TabBar";
 import { useLanguage } from "../../contexts/useLanguage";
+import SnackBarProvider from "../../providers/snackBarProvider";
 import TabsDataInterface from "../../types/tabs";
 
 export default function AppTabsLayout() {
@@ -31,17 +32,19 @@ export default function AppTabsLayout() {
   ];
 
   return (
-    <Tabs
-      screenOptions={tabsScreenOptions}
-      tabBar={(props) => <TabBar allTabsData={allTabsData} {...props} />}
-    >
-      {allTabsData.map((tabData) => (
-        <Tabs.Screen
-          key={tabData.name}
-          name={tabData.name}
-          options={tabScreen}
-        />
-      ))}
-    </Tabs>
+    <SnackBarProvider>
+      <Tabs
+        screenOptions={tabsScreenOptions}
+        tabBar={(props) => <TabBar allTabsData={allTabsData} {...props} />}
+      >
+        {allTabsData.map((tabData) => (
+          <Tabs.Screen
+            key={tabData.name}
+            name={tabData.name}
+            options={tabScreen}
+          />
+        ))}
+      </Tabs>
+    </SnackBarProvider>
   );
 }

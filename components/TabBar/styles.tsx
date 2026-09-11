@@ -14,7 +14,9 @@ const styles = StyleSheet.create<StylesInterface>({
     width: "100%",
     height: UserDimensions.heightMultiplier * 10,
     flexDirection: "row",
-    backgroundColor: "#9147FF",
+    backgroundColor: "#080808",
+    borderTopColor: "#3E6A3D",
+    borderTopWidth: 2,
   },
   routePlatformPressable: {
     flex: 1,
@@ -25,12 +27,12 @@ const styles = StyleSheet.create<StylesInterface>({
   focusedText: {
     fontFamily: "BagelFatOne_400Regular",
     fontSize: UserDimensions.textMultiplier * 4,
-    color: "#FFFFFF",
+    color: "#14AE5C",
   },
   unfocusedText: {
     fontFamily: "BagelFatOne_400Regular",
     fontSize: UserDimensions.textMultiplier * 4,
-    color: "#DEDEDEAA",
+    color: "#63AD5888",
   },
 });
 

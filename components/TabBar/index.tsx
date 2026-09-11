@@ -30,7 +30,7 @@ export default function TabBar({
         const iconClone: JSX.Element = cloneElement<IconsType>(
           allTabsData[index].icon,
           {
-            color: isFocused ? "#FFFFFF" : "#DEDEDEAA",
+            color: isFocused ? "#14AE5C" : "#63AD5888",
             size: UserDimensions.imageMultiplier * 5.5,
           },
         );
