@@ -8,25 +8,37 @@ const EnglishTextsList: LanguageDictionaryInterface = {
   canRepeatCharactersText: "Character Repetition",
   changeLanguageText: "Change language",
   closeText: "Close",
+  copyDecryptionKeyText: "Copy decryption key",
+  decryptionKeyText: "Decryption Key",
+  encryptPasswordMessageText:
+    "Encrypt the password for secure sharing. Share the decryption key separately, and only with the necessary people.",
+  encryptPasswordTitleText: "Encrypt password",
   generalText: "General",
   generatePasswordText: "Generate Password",
   generatedPasswordText: "Generated Password",
   lowercaseLettersText: "Lowercase Letters",
   mediumPasswordText: "Your password is moderately strong!",
   modifyLanguageText: "Change language",
+  noEncryptionMessageText:
+    "You are generating a QR code with the password in plain text, without encryption.",
+  noEncryptionTitleText: "Unencrypted password",
   numbersText: "Numbers",
   passwordLengthLimitText:
     "Invalid number of characters to generate your new password!",
   passwordLengthText: "Password Length",
   restorePurchaseText: "Restore purchase",
   settingsText: "Settings",
+  shareQrCodeText: "Share QR Code",
   socialMediaText: "Social Media",
   specialCharactersText: "Special Characters",
   storeText: "Store",
   strongPasswordText: "Your password is very strong!",
-  successCopyContent: "Content copied successfully!",
+  successCopyContentText: "Content copied successfully!",
   uppercaseLettersText: "Uppercase Letters",
   weakPasswordText: "Your password is very weak/vulnerable!",
+  withEncryptionMessageText:
+    "You have generated a QR code containing the encrypted password. Share the decryption password only with the necessary people.",
+  withEncryptionTitleText: "Encrypted password",
 };
 
 const PortugueseTextsList: LanguageDictionaryInterface = {
@@ -37,25 +49,37 @@ const PortugueseTextsList: LanguageDictionaryInterface = {
   canRepeatCharactersText: "Repetição de Caracteres",
   changeLanguageText: "Mudar idioma",
   closeText: "Fechar",
+  copyDecryptionKeyText: "Copiar chave de descriptografia",
+  decryptionKeyText: "Chave de Descriptografia",
+  encryptPasswordMessageText:
+    "Criptografe a senha para ter um compartilhamento seguro. Compartilhe a chave de descriptografia separadamente somente com as pessoas necessárias.",
+  encryptPasswordTitleText: "Criptografar senha",
   generalText: "Geral",
   generatePasswordText: "Gerar Senha",
   generatedPasswordText: "Senha Gerada",
   lowercaseLettersText: "Letras Minúsculas",
   mediumPasswordText: "Sua senha é moderadamente forte!",
   modifyLanguageText: "Alterar idioma",
+  noEncryptionMessageText:
+    "Você está gerando um código QR com a senha em texto simples, sem criptografia.",
+  noEncryptionTitleText: "Senha sem criptografia",
   numbersText: "Números",
   passwordLengthLimitText:
     "Quantidade de caracteres inválido para gerar sua nova senha!",
   passwordLengthText: "Tamanho da Senha",
   restorePurchaseText: "Restaurar compra",
   settingsText: "Configurações",
+  shareQrCodeText: "Compartilhar Código QR",
   socialMediaText: "Redes Sociais",
   specialCharactersText: "Caracteres Especiais",
   storeText: "Loja",
   strongPasswordText: "Sua senha é muito forte!",
-  successCopyContent: "Conteúdo copiado com sucesso!",
+  successCopyContentText: "Conteúdo copiado com sucesso!",
   uppercaseLettersText: "Letras Maiúsculas",
   weakPasswordText: "Sua senha é muito fraca/vulnerável!",
+  withEncryptionMessageText:
+    "Você gerou um código QR com a senha criptografada. Compartilhe a senha de descriptografia somente com as pessoas necessárias.",
+  withEncryptionTitleText: "Senha criptografada",
 };
 
 const SpanishTextsList: LanguageDictionaryInterface = {
@@ -66,25 +90,37 @@ const SpanishTextsList: LanguageDictionaryInterface = {
   canRepeatCharactersText: "Repetición de Caracteres",
   changeLanguageText: "Cambiar idioma",
   closeText: "Cerrar",
+  copyDecryptionKeyText: "Copiar clave de descifrado",
+  decryptionKeyText: "Clave de Descifrado",
+  encryptPasswordMessageText:
+    "Cifra la contraseña para garantizar un intercambio seguro. Comparte la clave de descifrado por separado, únicamente con las personas necesarias.",
+  encryptPasswordTitleText: "Cifrar contraseña",
   generalText: "General",
   generatePasswordText: "Generar Contraseña",
   generatedPasswordText: "Contraseña Generada",
   lowercaseLettersText: "Letras Minúsculas",
   mediumPasswordText: "¡Tu contraseña es moderadamente fuerte!",
   modifyLanguageText: "Cambiar idioma",
+  noEncryptionMessageText:
+    "Estás generando un código QR con la contraseña en texto plano, sin cifrado.",
+  noEncryptionTitleText: "Contraseña sin cifrado",
   numbersText: "Números",
   passwordLengthLimitText:
     "¡Cantidad de caracteres no válida para generar su nueva contraseña!",
   passwordLengthText: "Longitud de la Contraseña",
   restorePurchaseText: "Restaurar compra",
   settingsText: "Ajustes",
+  shareQrCodeText: "Compartir Código QR",
   socialMediaText: "Redes Sociales",
   specialCharactersText: "Caracteres Especiales",
   storeText: "Almacenar",
   strongPasswordText: "¡Tu contraseña es muy fuerte!",
-  successCopyContent: "¡Contenido copiado exitosamente!",
+  successCopyContentText: "¡Contenido copiado exitosamente!",
   uppercaseLettersText: "Letras Mayúsculas",
   weakPasswordText: "¡Su contraseña es muy débil/vulnerable!",
+  withEncryptionMessageText:
+    "Has generado un código QR con la contraseña cifrada. Comparte la contraseña de descifrado únicamente con las personas necesarias.",
+  withEncryptionTitleText: "Contraseña cifrada",
 };
 
 export { EnglishTextsList, PortugueseTextsList, SpanishTextsList };

@@ -18,6 +18,7 @@ export default function AppLayout() {
             <Stack screenOptions={stackScreenOptions}>
               <Stack.Screen name="InitApp" />
               <Stack.Screen name="AppTabs" />
+              <Stack.Screen name="PasswordQrCodeScreen" />
             </Stack>
           </IapProvider>
         </LanguageProvider>

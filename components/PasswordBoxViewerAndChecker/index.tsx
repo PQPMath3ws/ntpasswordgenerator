@@ -63,7 +63,10 @@ export default function PasswordBoxViewerAndChecker({
           <TouchableOpacity
             style={styles.qrCodeTouchableOpacity}
             onPress={() => {
-              router.navigate("/InitApp");
+              router.navigate({
+                pathname: "/PasswordQrCodeScreen",
+                params: { password },
+              });
             }}
           >
             <AntDesign
@@ -77,7 +80,7 @@ export default function PasswordBoxViewerAndChecker({
               await setStringAsync(password);
               showSnackBar(
                 <FontAwesome5 name="clipboard-check" />,
-                textsList["successCopyContent"],
+                textsList["successCopyContentText"],
               );
             }}
           >
