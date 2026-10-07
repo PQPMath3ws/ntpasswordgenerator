@@ -11,6 +11,8 @@ interface StylesInterface {
   passwordText: TextStyle;
   qrCodeTouchableOpacity: ViewStyle;
   qrCodeTouchableOpacityIcon: TextStyle;
+  lockedQrCodeTouchableOpacityView: ViewStyle;
+  lockedQrCodeTouchableOpacityViewIcon: TextStyle;
   copyTouchableOpacity: ViewStyle;
   copyTouchableOpacityIcon: TextStyle;
   dividerView: ViewStyle;
@@ -64,6 +66,20 @@ const styles = StyleSheet.create<StylesInterface>({
   qrCodeTouchableOpacityIcon: {
     fontSize: UserDimensions.widthMultiplier * 3.75,
     color: "#FFFFFF",
+  },
+  lockedQrCodeTouchableOpacityView: {
+    position: "absolute",
+    top: -UserDimensions.widthMultiplier * 1.4,
+    right: -UserDimensions.widthMultiplier,
+    backgroundColor: "#F29E00",
+    padding: UserDimensions.widthMultiplier * 0.6,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: "30%",
+  },
+  lockedQrCodeTouchableOpacityViewIcon: {
+    fontSize: UserDimensions.widthMultiplier * 1.8,
+    color: "#CE2929",
   },
   copyTouchableOpacity: {
     width: UserDimensions.widthMultiplier * 7.5,

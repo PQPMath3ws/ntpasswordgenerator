@@ -23,6 +23,9 @@ const EnglishTextsList: LanguageDictionaryInterface = {
     "You are generating a QR code with the password in plain text, without encryption.",
   noEncryptionTitleText: "Unencrypted password",
   numbersText: "Numbers",
+  opsProVersionMessageText:
+    "But don't worry - you can access the pro features for 6 hours, by watching a short advertisement. Interested?",
+  opsProVersionTitleText: "OOPS - You don't have the PRO version!",
   passwordLengthLimitText:
     "Invalid number of characters to generate your new password!",
   passwordLengthText: "Password Length",
@@ -35,6 +38,7 @@ const EnglishTextsList: LanguageDictionaryInterface = {
   strongPasswordText: "Your password is very strong!",
   successCopyContentText: "Content copied successfully!",
   uppercaseLettersText: "Uppercase Letters",
+  watchAdText: "Watch the ad",
   weakPasswordText: "Your password is very weak/vulnerable!",
   withEncryptionMessageText:
     "You have generated a QR code containing the encrypted password. Share the decryption password only with the necessary people.",
@@ -64,6 +68,9 @@ const PortugueseTextsList: LanguageDictionaryInterface = {
     "Você está gerando um código QR com a senha em texto simples, sem criptografia.",
   noEncryptionTitleText: "Senha sem criptografia",
   numbersText: "Números",
+  opsProVersionMessageText:
+    "Mas não se preocupe: você pode acessar os recursos premium por 6 horas assistindo a um anúncio curto. Ficou interessado?",
+  opsProVersionTitleText: "OPS - Você não tem a versão PRO!",
   passwordLengthLimitText:
     "Quantidade de caracteres inválido para gerar sua nova senha!",
   passwordLengthText: "Tamanho da Senha",
@@ -76,6 +83,7 @@ const PortugueseTextsList: LanguageDictionaryInterface = {
   strongPasswordText: "Sua senha é muito forte!",
   successCopyContentText: "Conteúdo copiado com sucesso!",
   uppercaseLettersText: "Letras Maiúsculas",
+  watchAdText: "Assistir anúncio",
   weakPasswordText: "Sua senha é muito fraca/vulnerável!",
   withEncryptionMessageText:
     "Você gerou um código QR com a senha criptografada. Compartilhe a senha de descriptografia somente com as pessoas necessárias.",
@@ -105,6 +113,9 @@ const SpanishTextsList: LanguageDictionaryInterface = {
     "Estás generando un código QR con la contraseña en texto plano, sin cifrado.",
   noEncryptionTitleText: "Contraseña sin cifrado",
   numbersText: "Números",
+  opsProVersionMessageText:
+    "Pero no te preocupes: puedes acceder a las funciones Pro durante 6 horas viendo un anuncio breve. ¿Te interesa?",
+  opsProVersionTitleText: "¡UPS! - ¡No tienes la versión PRO!",
   passwordLengthLimitText:
     "¡Cantidad de caracteres no válida para generar su nueva contraseña!",
   passwordLengthText: "Longitud de la Contraseña",
@@ -117,6 +128,7 @@ const SpanishTextsList: LanguageDictionaryInterface = {
   strongPasswordText: "¡Tu contraseña es muy fuerte!",
   successCopyContentText: "¡Contenido copiado exitosamente!",
   uppercaseLettersText: "Letras Mayúsculas",
+  watchAdText: "Mira el anuncio",
   weakPasswordText: "¡Su contraseña es muy débil/vulnerable!",
   withEncryptionMessageText:
     "Has generado un código QR con la contraseña cifrada. Comparte la contraseña de descifrado únicamente con las personas necesarias.",

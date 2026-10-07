@@ -1,4 +1,9 @@
-import { AntDesign, FontAwesome5, FontAwesome6 } from "@expo/vector-icons";
+import {
+  AntDesign,
+  FontAwesome5,
+  FontAwesome6,
+  Ionicons,
+} from "@expo/vector-icons";
 import {
   defaultOptions,
   Options,
@@ -6,10 +11,25 @@ import {
 } from "check-password-strength";
 import { setStringAsync } from "expo-clipboard";
 import { useRouter } from "expo-router";
-import { Text, TextStyle, TouchableOpacity, View } from "react-native";
+import { useEffect } from "react";
+import {
+  Platform,
+  Text,
+  TextStyle,
+  TouchableOpacity,
+  View,
+} from "react-native";
+import {
+  RewardedAd,
+  RewardedAdEventType,
+} from "react-native-google-mobile-ads";
 
+import DataKeys from "../../constants/data_keys";
+import { useDialogPopup } from "../../contexts/useDialogPopup";
 import { useLanguage } from "../../contexts/useLanguage";
+import { useSettings } from "../../contexts/useSettings";
 import { useSnackBar } from "../../contexts/useSnackBar";
+import StoreLocalSecureData from "../../services/storeLocalSecureData";
 import Divider from "../Divider";
 import styles from "./styles";
 
@@ -17,11 +37,17 @@ interface PasswordBoxViewerAndCheckerInterface {
   password: string;
 }
 
+const rewarded = RewardedAd.createForAdRequest(
+  Platform.OS === "ios" ? "" : process.env.EXPO_PUBLIC_ANDROID_APP_REWARD_ID!,
+);
+
 export default function PasswordBoxViewerAndChecker({
   password,
 }: PasswordBoxViewerAndCheckerInterface) {
   const router = useRouter();
+  const { closeDialogModal, showDialogPopupModal } = useDialogPopup();
   const { textsList } = useLanguage();
+  const { refreshSettings, settings } = useSettings();
   const { showSnackBar } = useSnackBar();
 
   if (!textsList || Object.keys(textsList).length === 0) {
@@ -50,6 +76,36 @@ export default function PasswordBoxViewerAndChecker({
     Strong: "strongPasswordText",
   };
 
+  useEffect(() => {
+    const rewardUnlistener = rewarded.addAdEventListener(
+      RewardedAdEventType.EARNED_REWARD,
+      async (_) => {
+        const now = new Date();
+        now.setHours(now.getHours() + 6);
+        await StoreLocalSecureData.setSecureData(
+          DataKeys.last_datetime_temp_pro_features,
+          now.getTime().toString(),
+        );
+        await StoreLocalSecureData.setSecureData(
+          DataKeys.has_temp_full_version,
+          "1",
+        );
+        await refreshSettings();
+        router.navigate({
+          pathname: "/PasswordQrCodeScreen",
+          params: { password },
+        });
+      },
+    );
+
+    rewarded.load();
+
+    return () => {
+      rewardUnlistener();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [password]);
+
   return (
     <View style={styles.mainView}>
       <Text style={styles.passwordGeneratedText}>
@@ -63,16 +119,50 @@ export default function PasswordBoxViewerAndChecker({
           <TouchableOpacity
             style={styles.qrCodeTouchableOpacity}
             onPress={() => {
-              router.navigate({
-                pathname: "/PasswordQrCodeScreen",
-                params: { password },
-              });
+              if (
+                settings &&
+                (settings.has_full_version || settings.has_temp_full_version)
+              ) {
+                router.navigate({
+                  pathname: "/PasswordQrCodeScreen",
+                  params: { password },
+                });
+              } else {
+                showDialogPopupModal({
+                  headerIcon: <Ionicons name="alert-circle" color="#CE2929" />,
+                  title: textsList["opsProVersionTitleText"],
+                  message: textsList["opsProVersionMessageText"],
+                  actionButtonColor: "#CE2929",
+                  actionButtonText: textsList["watchAdText"],
+                  actionButtonTextColor: "#FFFFFF",
+                  actionButtonOnPress: async () => {
+                    closeDialogModal();
+                    await rewarded.show();
+                  },
+                  userCanCloseModal: true,
+                  userCloseModalButtonColor: "#080808",
+                  userCloseModalButtonText: textsList["closeText"],
+                  userCloseModalButtonTextColor: "#FFFFFF",
+                  onCloseModal: () => {
+                    closeDialogModal();
+                  },
+                });
+              }
             }}
           >
             <AntDesign
               name="qrcode"
               style={styles.qrCodeTouchableOpacityIcon}
             />
+            {!settings!.has_full_version &&
+              !settings!.has_temp_full_version && (
+                <View style={styles.lockedQrCodeTouchableOpacityView}>
+                  <FontAwesome5
+                    name="lock"
+                    style={styles.lockedQrCodeTouchableOpacityViewIcon}
+                  />
+                </View>
+              )}
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.copyTouchableOpacity}
@@ -95,7 +185,6 @@ export default function PasswordBoxViewerAndChecker({
             passwordStrengthTextList[passwordStrengthValue]
           ].toUpperCase()}
         </Text>
-        <View></View>
       </View>
     </View>
   );
