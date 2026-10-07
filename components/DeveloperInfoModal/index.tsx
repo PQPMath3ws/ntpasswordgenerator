@@ -53,25 +53,27 @@ export default function DeveloperInfoModal({
     outputRange: [0, 1, 1.2],
   });
 
+  const timeoutAnimation: number = 500;
+
   function animateDeveloperInfoModal(isReverse: boolean): void {
     canInteractWithModal.current = false;
     const animation: Animated.CompositeAnimation[] = isReverse
       ? [
           Animated.timing(internalViewScaleAnimationValue, {
             toValue: 1,
-            duration: 200,
+            duration: timeoutAnimation / 3,
             easing: Easing.linear,
             useNativeDriver: true,
           }),
           Animated.timing(internalViewScaleAnimationValue, {
             toValue: 0,
-            duration: 200,
+            duration: timeoutAnimation / 3,
             easing: Easing.linear,
             useNativeDriver: true,
           }),
           Animated.timing(mainViewOpacityAnimationValue, {
             toValue: 0,
-            duration: 200,
+            duration: timeoutAnimation / 3,
             easing: Easing.linear,
             useNativeDriver: true,
           }),
@@ -79,19 +81,19 @@ export default function DeveloperInfoModal({
       : [
           Animated.timing(mainViewOpacityAnimationValue, {
             toValue: 1,
-            duration: 200,
+            duration: timeoutAnimation / 3,
             easing: Easing.linear,
             useNativeDriver: true,
           }),
           Animated.timing(internalViewScaleAnimationValue, {
             toValue: 1,
-            duration: 200,
+            duration: timeoutAnimation / 3,
             easing: Easing.linear,
             useNativeDriver: true,
           }),
           Animated.timing(internalViewScaleAnimationValue, {
             toValue: 0.5,
-            duration: 200,
+            duration: timeoutAnimation / 3,
             easing: Easing.linear,
             useNativeDriver: true,
           }),
@@ -100,7 +102,7 @@ export default function DeveloperInfoModal({
     if (!isReverse) {
       setTimeout(() => {
         canInteractWithModal.current = true;
-      }, 600);
+      }, timeoutAnimation);
     }
   }
 
@@ -119,7 +121,7 @@ export default function DeveloperInfoModal({
           animateDeveloperInfoModal(true);
           setTimeout(() => {
             dismiss();
-          }, 600);
+          }, timeoutAnimation);
           return true;
         },
       );
@@ -145,7 +147,7 @@ export default function DeveloperInfoModal({
             animateDeveloperInfoModal(true);
             setTimeout(() => {
               dismiss();
-            }, 600);
+            }, timeoutAnimation);
           }
         }}
         style={styles.pressableView}
@@ -249,7 +251,7 @@ export default function DeveloperInfoModal({
                   animateDeveloperInfoModal(true);
                   setTimeout(() => {
                     dismiss();
-                  }, 600);
+                  }, timeoutAnimation);
                 }
               }}
             >

@@ -41,7 +41,7 @@ export default function IapProvider({ children }: PropsWithChildren) {
       emitterEvent.emit("showDialogPopupModal", {
         title: textsList["connectionErrorTitleText"],
         message: textsList["connectionErrorMessageText"],
-        actionButtonColor: "#303030",
+        actionButtonColor: "#080808",
         actionButtonText: textsList["closeText"],
         actionButtonTextColor: "#FFFFFF",
         actionButtonOnPress: () => {
@@ -88,7 +88,7 @@ export default function IapProvider({ children }: PropsWithChildren) {
             headerIcon: <AntDesign name="check-circle" color="green" />,
             title: textsList["successBuyProTitleText"],
             message: textsList["successBuyProMessageText"],
-            actionButtonColor: "#303030",
+            actionButtonColor: "#080808",
             actionButtonText: textsList["closeText"],
             actionButtonTextColor: "#FFFFFF",
             actionButtonOnPress: () => {
@@ -108,7 +108,7 @@ export default function IapProvider({ children }: PropsWithChildren) {
             headerIcon: <AntDesign name="check-circle" color="green" />,
             title: textsList["successBuyProTitleText"],
             message: textsList["successBuyProMessageText"],
-            actionButtonColor: "#303030",
+            actionButtonColor: "#080808",
             actionButtonText: textsList["closeText"],
             actionButtonTextColor: "#FFFFFF",
             actionButtonOnPress: () => {
@@ -119,7 +119,7 @@ export default function IapProvider({ children }: PropsWithChildren) {
           emitterEvent.emit("showDialogPopupModal", {
             title: textsList["purchaseVipTitleErrorText"],
             message: textsList["purchaseVipMessageErrorText"],
-            actionButtonColor: "#303030",
+            actionButtonColor: "#080808",
             actionButtonText: textsList["closeText"],
             actionButtonTextColor: "#FFFFFF",
             actionButtonOnPress: () => {
