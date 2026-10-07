@@ -90,8 +90,8 @@ android {
         applicationId 'com.nerdtechdev.ntpasswordgenerator'
         minSdk = rootProject.ext.minSdkVersion
         targetSdk = rootProject.ext.targetSdkVersion
-        versionCode 10
-        versionName "0.1.0"
+        versionCode 100
+        versionName "1.0.0"
 
         buildConfigField "String", "REACT_NATIVE_RELEASE_LEVEL", "\"${findProperty('reactNativeReleaseLevel') ?: 'stable'}\""
     }
